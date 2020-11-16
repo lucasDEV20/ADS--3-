@@ -1,0 +1,12 @@
+Primeiramente, como essa versão é a mais simples, 
+só é possível jogar Humano contra Humano. 
+Em breve ensinaremos como programar o computador para jogar.
+
+Então, escolha Jogador 1 como Humano e Jogador 2 também.
+Após isso, basta escolher a linha e a coluna do tabuleiro onde você quer jogar.
+Lembrando que o Jogador 1 é sempre o 'X' e o Jogador 2 é sempre o 'O'.
+
+
+
+fonte para aq resoluçao do´programa 
+https://www.javaprogressivo.net/2012/10/Como-fazer-um-Jogo-da-Velha-em-Java.html

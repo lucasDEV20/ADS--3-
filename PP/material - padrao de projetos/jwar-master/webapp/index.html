@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- vim: et sw=2 ts=2 sts=2
+  -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!--<link rel="shortcut icon" href="ico/favicon.png">-->
+
+<title>JWar</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/gh-fork-ribbon.css" rel="stylesheet">
+<!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">-->
+<link href="style.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- for the future: http://lab.hakim.se/forkit-js/ -->
+<div class="github-fork-ribbon-wrapper left hidden-xs">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/jansegre/jwar">Fork me on GitHub</a>
+  </div>
+</div>
+
+<!-- Fixed navbar -->
+<header class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        JWar
+        <small class="version">0.2.1-beta</small>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="form-inline"><input type="text" id="username" class="form-control input-short" placeholder="Seu nome aqui..."></li>
+        <!--
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" class="globe-btn">
+            <i class="glyphicon glyphicon-globe"></i>
+            <span class="visible-xs">Visão do Globo</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="fullscreen-btn">
+            <i class="glyphicon glyphicon-fullscreen"></i>
+            <span class="visible-xs">Tela Cheia</a>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+        <h4 class="modal-title" id="myModalLabel">Parabéns!</h4>
+      </div>
+      <div class="modal-body">
+        <p class="lead">O Jogador <span class="winner">--</span> ganhou o jogo!</p>
+        <p>Seu objetivo era <span class="mission">--</span>.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container jwar">
+
+  <div class="row jumbotron welcome">
+    <h1>JWar</h1>
+    <h2>Só mais um jogo de War.</h2>
+    <p>Para iniciar um jogo novo clique abaixo e passe o link para seus amigos.</p>
+    <form class="room-form form-inline" role="form">
+      <!--<div class="form-group">
+        <input name="room" class="room form-control" placeholder="Apelido">
+      </div>-->
+      <div class="form-group">
+        <input type="submit" class="form-control" value="Criar">
+      </div>
+    </form>
+    <p><a class="room-link"></a></p>
+  </div>
+
+  <!-- Main component for a primary marketing message or call to action -->
+  <!--
+  <div class="well map"></div>
+  -->
+  <div class="row">
+    <div class="panel panel-default well hide map-screen">
+      <div class="panel-body map"></div>
+      <div class="panel-footer">
+        <div class="pull-left">
+          <span class="label label-special current-player" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title=""></span>
+          <span class="label label-special current-state"></span>
+          <span style="display:none" class="occupy">
+            <span class="btn btn-default" data-armies="3">3</span>
+            <span class="btn btn-default" data-armies="2">2</span>
+            <span class="btn btn-default" data-armies="1">1</span>
+          </span>
+          <span style="display:none" class="ok btn btn-default">OK</span>
+          <span class="armies badge"></span>
+        </div>
+        <div class="pull-right">
+          <span class="selected-country">
+            <span class="label label-default country"></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+          </span>
+          <span class="label label-default hovered-country"></span>
+        </div>
+        <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- chat -->
+  <div class="row well">
+    <div class="command col-md-6">
+      <form class="form-inline command-form" role="form">
+        <div class="form-group">
+          <input class="cmd form-control" type="text" placeholder="Digite um comando...">
+        </div>
+        <input type="submit" class="btn btn-default" value="Enviar">
+      </form>
+      <div class="console">
+      </div>
+    </div>
+    <div class="chat col-md-6">
+      <form class="form-inline chat-form" role="form">
+        <div class="form-group">
+          <input class="msg form-control" type="text" placeholder="Digite sua mensagem...">
+        </div>
+        <input type="submit" class="btn btn-default" value="Enviar">
+      </form>
+      <div class="console">
+      </div>
+    </div>
+  </div>
+</div> <!-- /container -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/screenfull.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="js/d3.geo.projection.v0.min.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+<script src="js/socket.io/socket.io.js"></script>
+<script src="main.js"></script>
+<!-- le analytics script -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-45564734-1', 'jwar.herokuapp.com');
+  ga('send', 'pageview');
+</script>

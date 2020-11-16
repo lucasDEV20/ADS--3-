@@ -1,0 +1,6 @@
+PROBLEMA - TORRENTS FILMES (MESMO GRUPO)
+
+A conceituadíssima empresa de aluguel de filmes "Torrents Filmes" necessita do registro de seus usuários por nome, renda familiar, e-mail e seus contatos telefônicos. Cada usuário, no momento do cadastro pode ganhar (aleatoriamente) um cupom de desconto (único por usuário) e esse permanecerá para sempre ativo. O usuário, por sua vez, poderá alugar inúmeros filmes. Durante o aluguel é necessário obter a data do aluguel e a sua possível data de término. Nossos filmes devem possuir um cadastro simples, contendo no máximo o título, ano de lançamento e suas categorias.
+
+Crie o modelo conceitual  (Até 21:10)
+Crie o modelo lógico

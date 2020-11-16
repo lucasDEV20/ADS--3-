@@ -1,0 +1,6 @@
+Baseado na apresentação de hoje, responda as questões:
+1. Defina o que é arquitetura de software com suas palavras.
+2. O que torna a arquitetura relevante nos dias atuais.
+3. Quais qualificações são necessárias para ser um arquiteto de software. 
+4. Quais são os benefícios de se adotar arquitetura de software.
+5. Quando devemos adotar arquitetura de software.

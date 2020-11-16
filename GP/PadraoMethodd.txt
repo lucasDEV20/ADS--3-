@@ -1,0 +1,21 @@
+1-)relatorio das enfases = pelo nome
+
+2-)nome-sobrenome 
+
+3-)enfase-nome=todo nome que fez matematica todos que fizeram matemática tem que estar em
+ ordem alfabetica - ordenação em dois niveis - primeira enfase automação - todos em ordem alfabética-
+linha de quebra e linha de detalhe
+
+4-)Curso e nome 
+
+5-)Situação e nome
+
+6-) situação - curso - nome(nessa ordem)
+
+7-)enfase - curso - nome
+
+8-)curso - enfase - nome
+
+
+
+ordenação em ordem crescente
