@@ -1,9 +1,0 @@
- o sistema da biblioteca de advocacia segue 
- como um conjunto de objetos fracamente
-acoplados e com interfaces bem definidas
-fizemos um  para poder usar cada objeto que oferece 
-um conjunto de serviços ser vistos
-como uma rede ou grafo de objetos comunicantes.
-,regras: objetos encapsulam seus dados; um objeto é Regras
-responsável pela manutenção da integridade de sua
-representação. 
