@@ -59,25 +59,35 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             atualizarTabelaDeTemas();
             atualizarTabelaDeFabricantes();
             atualizarTabelaDeTipoMiniatura();
+            for (int i = 0; i < jTabbedPaneTelas.getTabCount(); i++) {
+                jTabbedPaneTelas.setDisabledIconAt(i,null);
+                jTabbedPaneTelas.setEnabledAt(i, false);
+            }
+            jTabbedPaneTelas.setEnabledAt(0, false); //A primeira é a aba 0.
+            jTabbedPaneTelas.setEnabledAt(2, false); //A terceira é a aba 
+            jTabbedPaneTelas.setDisabledIconAt(0 , null); //A primeira é a aba 0.
+            jTabbedPaneTelas.setDisabledIconAt(2, null); //A terceira é a aba 
+            jTabbedPaneTelas.setTabComponentAt(int index, Component c); 
+            
 //            atualizarTabelaMiniatura();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());    // Exibe mensagem em caso de erro
         }
     }
-    private void limpar()
-{
-  
-     jTextFielEdicao.setText("");
-     jTextFieldNomeFabricante.setText("");
-     jTextFieldNomeTema.setText("");
-     jTextFieldNomeTipoMiniastura.setText("");
-     jTextFielEdicao.setText("");
-     jTextFieldAno.setText("");
-     jTextFieldEscala.setText("");
-     jTextFieldMinObs.setText("");
-     jTextFieldModelo.setText("");
-}
+
+    private void limpar() {
+
+        jTextFielEdicao.setText("");
+        jTextFieldNomeFabricante.setText("");
+        jTextFieldNomeTema.setText("");
+        jTextFieldNomeTipoMiniastura.setText("");
+        jTextFielEdicao.setText("");
+        jTextFieldAno.setText("");
+        jTextFieldEscala.setText("");
+        jTextFieldMinObs.setText("");
+        jTextFieldModelo.setText("");
+    }
 
     private void atualizarTabelaDeTemas() throws Exception {
         // Obtém o modelo do Jtable de temas
@@ -144,10 +154,10 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
                 miniatura.getMin_iden(), // fab_idem do objeto fabocantes cadastrado no banco de dados
                 miniatura.getMin_ano(),// fab_nome do objeto fabricantes cadastrado no banco de dados
                 miniatura.getMin_edicao(),
-                 miniatura.getMin_escala(),
-                 miniatura.getMin_modelo(),
-                 miniatura.getMin_observacoes(),
-                 miniatura.getMin_valor()
+                miniatura.getMin_escala(),
+                miniatura.getMin_modelo(),
+                miniatura.getMin_observacoes(),
+                miniatura.getMin_valor()
             });
         }
     }
@@ -228,7 +238,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
 
         jTabbedPaneTelas.setBackground(new java.awt.Color(0, 0, 0));
-        jTabbedPaneTelas.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jTabbedPaneTelas.setToolTipText("");
         jTabbedPaneTelas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jPanelFabricante.setBackground(new java.awt.Color(255, 204, 204));
@@ -289,12 +299,12 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
         jTableFabricante.setSelectionBackground(new java.awt.Color(255, 204, 204));
         jTableFabricante.setSelectionForeground(new java.awt.Color(204, 255, 204));
         jTableFabricante.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTableFabricanteAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jTableFabricante.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -559,12 +569,12 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
         jTableTipoMINIATURA.setSelectionBackground(new java.awt.Color(204, 255, 204));
         jTableTipoMINIATURA.setSelectionForeground(new java.awt.Color(255, 204, 204));
         jTableTipoMINIATURA.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTableTipoMINIATURAAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jTableTipoMINIATURA.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1268,7 +1278,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1373,7 +1383,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelFotosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFotosLayout.createSequentialGroup()
-                    .addContainerGap(124, Short.MAX_VALUE)
+                    .addContainerGap(175, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -1410,7 +1420,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Tema incluído com sucesso!"); // Exibe a mensagem de sucesso após incluir
             atualizarTabelaDeTemas();                       // Atualiza o Jtable com os temas cadastrados
             limpar();
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());    // Exibe mensagem em caso de erro
         }
@@ -1506,7 +1516,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             FabricanteBll.incluir(fabricante);                          // Chama a camada bll para incluir o tema
             JOptionPane.showMessageDialog(rootPane, "Fabircante incluído com sucesso!"); // Exibe a mensagem de sucesso após incluir
             atualizarTabelaDeFabricantes();                       // Atualiza o Jtable com os temas cadastrados
-          limpar();
+            limpar();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());    // Exibe mensagem em caso de erro
         }
@@ -1543,7 +1553,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             Tipo_MiniaturaBll.incluir(tipo_miniatura);                          // Chama a camada bll para incluir o tema
             JOptionPane.showMessageDialog(rootPane, "tipo incluído com sucesso!"); // Exibe a mensagem de sucesso após incluir
             atualizarTabelaDeTipoMiniatura();                      // Atualiza o Jtable com os temas cadastrados
-           limpar();
+            limpar();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());    // Exibe mensagem em caso de erro
         }
@@ -1660,7 +1670,6 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             MiniaturaBll.incluir(miniatura);                          // Chama a camada bll para incluir o tema
             JOptionPane.showMessageDialog(rootPane, "Fabircante incluído com sucesso!"); // Exibe a mensagem de sucesso após incluir
             atualizarTabelaDeFabricantes();                       // Atualiza o Jtable com os temas cadastrados
-           
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());    // Exibe mensagem em caso de erro
@@ -1737,7 +1746,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             }
         });
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton25incluirMin;
