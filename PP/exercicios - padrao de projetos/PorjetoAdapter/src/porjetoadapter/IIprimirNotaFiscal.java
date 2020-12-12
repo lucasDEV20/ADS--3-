@@ -10,5 +10,5 @@ package porjetoadapter;
  * @author Computador
  */
 public class IIprimirNotaFiscal {
-    String imprimirNotaFiscal(NotaFiscal OBj-);
+//    String imprimirNotaFiscal(NotaFiscal notaFiscal);
 }

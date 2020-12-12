@@ -35,6 +35,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
     /**
      * Creates new form CadastroDeFabricante
      */
+    
     public static void limparCampos(Container container) {
         Component components[] = container.getComponents();
         for (Component component : components) {
@@ -54,11 +55,13 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
 
     public TelaPrincipalApp() {
         initComponents();
+        
         this.setLocationRelativeTo(rootPane);
         try {
             atualizarTabelaDeTemas();
             atualizarTabelaDeFabricantes();
             atualizarTabelaDeTipoMiniatura();
+            
             for (int i = 0; i < jTabbedPaneTelas.getTabCount(); i++) {
                 jTabbedPaneTelas.setDisabledIconAt(i,null);
                 jTabbedPaneTelas.setEnabledAt(i, false);
@@ -67,7 +70,8 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             jTabbedPaneTelas.setEnabledAt(2, false); //A terceira é a aba 
             jTabbedPaneTelas.setDisabledIconAt(0 , null); //A primeira é a aba 0.
             jTabbedPaneTelas.setDisabledIconAt(2, null); //A terceira é a aba 
-            jTabbedPaneTelas.setTabComponentAt(int index, Component c); 
+            jTabbedPaneTelas.revalidate();
+             
             
 //            atualizarTabelaMiniatura();
 
@@ -75,6 +79,7 @@ public class TelaPrincipalApp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());    // Exibe mensagem em caso de erro
         }
     }
+    
 
     private void limpar() {
 

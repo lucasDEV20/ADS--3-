@@ -20,21 +20,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(rootPane);
     }
-    
-     private void limpar()
-{
-  
+
+    private void limpar() {
+
 //     jTextAreaImpressoura.setText("");
 //     jTextAreaImpressoura1.setText("");
 //     jTextAreaImpressoura2.setText("");
-     jTextFieldDados.setText("  ");
-     jTextFieldMetodoDepagamento.setText("");
-     jTextFieldPreço.setText("");
-     
-     
-          
-     
-}
+        jTextFieldDados.setText("  ");
+        jTextFieldMetodoDepagamento.setText("");
+        jTextFieldPreço.setText("");
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -202,8 +198,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         IFiscalEstacionamento impressora = new adapterImpressoraEstacionamento();
         IFiscalEstacionamento impressora2 = new impressoraDoPreçoEstacionamento();
         IFiscalEstacionamento impressora3 = new impressoraPagamento();
-        
-        
 
         jTextAreaImpressoura.setText(impressora.IprimirFiscalEstacionamento(nota));//200
         jTextAreaImpressoura2.setText(impressora2.IprimirFiscalEstacionamento(nota2));//200
