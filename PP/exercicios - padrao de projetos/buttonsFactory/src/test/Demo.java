@@ -8,7 +8,11 @@ ________________________________________________________________________________
 classes concretas, mas os retornam como objetos de tipo ou interface abstrata.
 ____________________________________________________________________________________________________________
  */
-package modal;
+package test;
+
+import modal.Dialogo;
+import modal.HtmlDialogo;
+import modal.WindowsTelaDialog;
 
 /**
  *
