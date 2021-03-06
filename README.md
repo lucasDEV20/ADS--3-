@@ -1,3 +1,4 @@
+
 <h1 align="center">
     < 📜 > <br>
 REPOSITÓRIO DE MATÉRIAS
@@ -14,7 +15,7 @@ REPOSITÓRIO DE MATÉRIAS
     <img alt="lucasDEV20" src="https://img.shields.io/badge/Lucas-GitHub-blu">
   </a>
 </p>
-<br>
+</br>
 
 ## 📚 Contexto
 
@@ -32,24 +33,11 @@ REPOSITÓRIO DE MATÉRIAS
 
 
 ### ADS--3
------------------------------------------------------------------------------------
-```
------------------------------------------------------------------------------------
-ARS - ARQUITETURA DE SOFTWARE [ ]
--
-ED - ESTRUTURA DE DADOS [ ]
--
-ESTUDO URI - ESTUDOS NA PLATAFORMA URI [ ]
--
-GP- GESTAO DE PROJETOS [ ]
--
-HA-HORARIO DE AULAS [ ]
--
-MBD-MODELAGEM DE BANDO DE DADOS [ ]
--
-PP - PADROES DE PROJETO [ ]
--
-RH- RECURSOS HUMANOS NO TRABALHO [ ]
--
------------------------------------------------------------------------------------
-...
+<be> 
+<p align="center">
+
+![WhatsApp Image 2020-08-03 at 14 18 56](https://user-images.githubusercontent.com/55209015/110193002-465cde80-7e10-11eb-8cb3-d24da3cd6ada.jpeg)
+
+</p>
+</br>
+
